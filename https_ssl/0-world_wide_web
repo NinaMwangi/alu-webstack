@@ -12,8 +12,8 @@ function audit_subdomain (
 	fi
 
 	for sub in "${subdomain[0]}"; do
-		record_type"$(dig "$sub.$domain" | awk '/answer section/ { getline; print $4})
-		destination"$(dig "$sub.$domain" | awk '/answer section/ { getline; print $5})
+		record_type"$(dig "$sub.$domain" | awk '/answer section/ { getline; print $4}')
+		destination"$(dig "$sub.$domain" | awk '/answer section/ { getline; print $5}')
 		echo "The subdomain $sub is a $record_type record and points to $destination"
 	done
 )
